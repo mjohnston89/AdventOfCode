@@ -1,6 +1,6 @@
 import sys
 
-print('Advent of Code - Day 1, Challenge 1')
+print('Advent of Code - Day 1, Challenge 2')
 
 uCount=0
 dCount=0
