@@ -1,0 +1,1 @@
+This repository will hold the solutions to the coding challenges from http://adventofcode.com
