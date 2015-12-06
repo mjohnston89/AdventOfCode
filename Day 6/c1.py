@@ -40,7 +40,7 @@ with open('input.txt') as file:
 		elif theSplit[cmdIndex]=='off': lightOff(x1,y1,x2,y2)
 		elif theSplit[cmdIndex]=='toggle':toggleLight(x1,y1,x2,y2)
 
-# Initialise line count
+# Initialise the 'light on' count
 count = 0
 
 # Check each digit within the matrix to count lights turned on
