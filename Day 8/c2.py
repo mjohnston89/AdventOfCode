@@ -3,7 +3,7 @@ print('Advent of Code - Day 8, Challenge 1')
 import re
 
 literalCount = 0
-characterCount = 0
+encodedCount = 0
 
 # Open source file
 with open('input.txt') as file:
@@ -12,6 +12,6 @@ with open('input.txt') as file:
 		# Increment the literal count
 		literalCount += len(line.strip())
 		# increment character count
-		characterCount+=len(line.strip()[1:-1].decode('string_escape'))
+		encodedCount += len('"{0}"'.format(re.escape(line.strip())))
 
-print literalCount, '-', characterCount,'=',literalCount-characterCount
+print encodedCount, '-', literalCount,'=',encodedCount-literalCount
