@@ -2,7 +2,7 @@ print('Advent of Code - Day 11, Challenge 2\n')
 
 # My puzzle input
 source = 'hxbxwxba'
-# Result from challenge 2
+# Result from challenge 1
 source = 'hxbxxyzz'
 
 # Function that checks if a string contains at least two sequences of letters that repeat at least twice in a row
