@@ -8,12 +8,9 @@ for line in open('input.txt'):
 	# unavailable values remain as None. temp dictionary stored in list: 'aunts'
 	(_,num,term1,value1,term2,value2,term3,value3) = line.split()
 	temp = {'children':None,'cats':None,'samoyeds':None,'pomeranians':None,'akitas':None,'vizslas':None,'goldfish':None,'trees':None,'cars':None,'perfumes':None}
-	term1 = term1[0:-1]
-	term2 = term2[0:-1]
-	term3 = term3[0:-1]
-	temp[term1] = int(value1[0:-1])
-	temp[term2] = int(value2[0:-1])
-	temp[term3] = int(value3)
+	temp[term1[0:-1]] = int(value1[0:-1])
+	temp[term2[0:-1]] = int(value2[0:-1])
+	temp[term3[0:-1]] = int(value3)
 	aunts.append(temp)
 
 # dictionary of aunt we are looking for
