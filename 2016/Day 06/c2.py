@@ -15,7 +15,7 @@ with open('input.txt') as file:
       columns[index].append(char)
 
 for lst in columns:
-  # for each list add the most common letter to message
+  # for each list add the least common letter to message
   message += Counter(lst).most_common()[-1][0]
 
 print('The correct message is: ' + message)
