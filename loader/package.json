@@ -1,0 +1,15 @@
+{
+  "name": "aoc-quick-start",
+  "version": "0.0.1",
+  "description": "Quickly fetch the Advent of Code input for a given year and day and add to correct folder",
+  "main": "aoc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "minimist": "^1.2.0"
+  }
+}
