@@ -39,18 +39,31 @@ const getInput = (year, day) => {
   })
     .then((res) => {
       const d = `0${day}`.slice(-2);
-      const p1 = path.join(__dirname, '..', `${year}`, `Day ${d}`, 'input.txt');
-      const p2 = path.join(__dirname, '..', `${year}`, `Day ${d}`, 'c1.js');
+      const dirPath = path.join(__dirname, '..', `${year}`, `Day ${d}`);
+      const p1 = path.join(dirPath, 'input.txt');
+      const p2 = path.join(dirPath, 'c1.ts');
 
-      fs.writeFile(p1, res.data, 'utf8')
-        .then(() => console.log(logGreen, 'Input file created'))
-        .catch((err2) => console.log(logRed, `Error creating file: ${err2}`));
-      
-      fs.writeFile(p2, '', 'utf8')
-        .then(() => console.log(logGreen, 'Part 1 file created'))
-        .catch((err2) => console.log(logRed, `Error creating file: ${err2}`));
+      fs.stat(dirPath).then(() => {
+        createFiles(p1, p2, res.data);
+      }).catch((err) => {
+        fs.mkdir(dirPath).then(() => {
+          createFiles(p1, p2, res.data);
+        }).catch((err) => {
+          console.log(logRed, `Error creating directory: ${err}`);
+        })
+      });
     })
     .catch((err) => console.log(logRed, `Error: ${err}`))
+};
+
+const createFiles = (p1, p2, data) => {
+  fs.writeFile(p1, data, 'utf8')
+      .then(() => console.log(logGreen, 'Input file created'))
+      .catch((err2) => console.log(logRed, `Error creating file: ${err2}`));
+      
+  fs.writeFile(p2, '', 'utf8')
+    .then(() => console.log(logGreen, 'Part 1 file created'))
+    .catch((err2) => console.log(logRed, `Error creating file: ${err2}`));
 };
 
 parseInput();
